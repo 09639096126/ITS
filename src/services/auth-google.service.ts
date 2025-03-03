@@ -11,7 +11,7 @@ import { NgxSpinnerService } from 'ngx-spinner';
 })
 export class AuthGoogleService {
   public isLoading = false; // ✅ Show loading state
-  readonly APIUrl = 'https://its-rho.vercel.app:5000/api/User/check-email';
+  readonly APIUrl = 'http://its-rho.vercel.app:5000/api/User/check-email';
 
   constructor(
     private toastr: ToastrService,
@@ -54,7 +54,7 @@ export class AuthGoogleService {
   }
   getUserAssets(email: string): Observable<any[]> {
     return this.http.get<any[]>(
-      `https://its-rho.vercel.app/api/User/user-assets?email=${email}`
+      `http://its-rho.vercel.app/api/User/user-assets?email=${email}`
     );
   }
 
