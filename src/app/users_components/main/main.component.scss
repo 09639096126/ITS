@@ -1,0 +1,95 @@
+
+
+.carousel-item .banner {
+    background-size: 100% 450px;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+/* Apply margin to the .content */
+.content {
+  margin: 10px;
+  padding: 10px; /* Optional: Add padding for extra spacing inside the container */
+  box-sizing: border-box; /* Ensures padding is included within the content area */
+}
+
+/* Optional: Style the banner */
+.banner {
+  margin: 10px auto; /* Center the banner horizontally with margin */
+  padding: 10px; /* Add spacing inside the banner */
+  background-color: #f0f0f0; /* Example background color */
+  border: 1px solid #ccc; /* Example border */
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 20px;
+  
+}
+
+.main-content {
+  flex: auto;
+  margin-right: 20px;
+}
+
+.sidebar {
+  flex: auto;
+ 
+  
+}
+
+
+
+/* Style for the "Top" button */
+#myBtn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  background-color: rgb(95, 1, 99);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+#myBtn:hover {
+  background-color: rgb(95, 1, 99);
+
+}
+
+.btn-purple {
+  background-color: #6a1b9a;
+  color: white;
+}
+.btn-purple:hover {
+  background-color: #4a148c;
+}
+
+.back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: none;
+}
+

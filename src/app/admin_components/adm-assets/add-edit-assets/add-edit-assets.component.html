@@ -1,0 +1,96 @@
+<div class="form-container">
+  <div class="form-group">
+    <label>Coll Code</label>
+    <input
+      type="text"
+      class="form-control"
+      [(ngModel)]="CollCode"
+      placeholder="CollCode"
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="equipmentType">Equipment Type</label>
+    <select id="equipmentType" class="form-control" [(ngModel)]="Name">
+      <option *ngFor="let type of equipmentTypes" [value]="type">
+        {{ type }}
+      </option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label>Description</label>
+    <input
+      type="text"
+      class="form-control"
+      [(ngModel)]="Desc1"
+      placeholder="Enter Description"
+    />
+  </div>
+  <div class="form-group">
+    <label>Annual Date</label>
+    <input type="date" class="form-control" [(ngModel)]="Andate" />
+  </div>
+  <div class="form-group">
+    <label>Mr Number</label>
+    <input type="text" class="form-control" [(ngModel)]="MrNum" />
+  </div>
+
+  <div class="form-group">
+    <label>Propperty Number</label>
+    <input type="text" class="form-control" [(ngModel)]="PropNo" />
+  </div>
+  <div class="form-group">
+    <label>Quantity</label>
+    <input type="number" class="form-control" [(ngModel)]="Qty" />
+  </div>
+  <div class="form-group">
+    <label>Unit Measure</label>
+    <input type="text" class="form-control" [(ngModel)]="UM" />
+  </div>
+  <div class="form-group">
+    <label>Unit Cost</label>
+    <input type="text" class="form-control" [(ngModel)]="UCost" />
+  </div>
+  <div class="form-group">
+    <label>Total Cost</label>
+    <input type="text" class="form-control" [(ngModel)]="TCost" />
+  </div>
+  <div class="form-group">
+    <label>End User Name</label>
+    <input type="text" class="form-control" [(ngModel)]="UserName" />
+  </div>
+  <div class="form-group">
+    <label>End User Email</label>
+    <input type="email" class="form-control" [(ngModel)]="Email" />
+  </div>
+  <div class="form-group">
+    <label>Current User</label>
+    <input type="email" class="form-control" [(ngModel)]="CurrentUser" />
+  </div>
+  <div class="form-group">
+    <label for="equipmentType">Status</label>
+    <select id="equipmentType" class="form-control" [(ngModel)]="EqStatus">
+      <option *ngFor="let type of StatusTypes" [value]="type">
+        {{ type }}
+      </option>
+    </select>
+  </div>
+
+  <!-- <div class="form-group">
+      <label>Upload File</label>
+      <img [src]="PhotoFilePath" height="100" width="100" />
+      <input type="file" (change)="uploadFile($event)" class="form-control mt-2" />
+    </div> -->
+
+  <button (click)="addEvents()" class="btn btn-primary" *ngIf="events.Id == 0">
+    Save
+  </button>
+  <button
+    (click)="updateEvents()"
+    class="btn btn-warning"
+    *ngIf="events.Id != 0"
+  >
+    Update
+  </button>
+</div>

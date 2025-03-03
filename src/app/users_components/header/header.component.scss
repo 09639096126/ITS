@@ -1,0 +1,39 @@
+.nav-link:hover {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .nav-item.active .nav-link {
+    font-weight: bold;
+    color: #007bff !important;
+  }
+  
+  .dropdown-menu {
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .dropdown-item:hover {
+    background-color: #f1f1f1;
+    transition: background-color 0.2s;
+    cursor: pointer;
+  }
+/* Light Mode (Default) */
+body.light-mode {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+/* Dark Mode */
+body.dark-mode {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+/* Marron Mode */
+body.marron-mode {
+  background-color: #800000; /* Marron background */
+  color: #f4eada;            /* Light text for contrast */
+}

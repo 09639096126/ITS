@@ -1,0 +1,153 @@
+<mat-toolbar>
+  <mat-toolbar-row>
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <div class="head-user-avatar-container">
+        <div class="head-user-avatar">
+          <img
+            [src]="picture"
+            style="width: 40px; height: 40px; border-radius: 50%"
+            alt="user"
+            class="user-avatar"
+          />
+          <div class="circle-indicator pulse"></div>
+        </div>
+      </div>
+
+<div>
+  <a
+  class="navbar-brand i-TICKET"
+  [routerLink]="[{ outlets: { secondary: ['dashboard'] } }]"
+  ><h1 >i-TICKET</h1></a
+>
+</div>
+      
+      <button class="btnMenu" mat-button (click)="opened = !opened">
+        <mat-icon class="menu">{{ opened ? "close" : "menu" }}</mat-icon>
+      </button>
+    </nav>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-sidenav-container class="sidenav scroller">
+  <mat-sidenav [(opened)]="opened" mode="side">
+    <mat-list style="align-items: center">
+      <img src="assets/img/ITO.png" alt="ITS" class="itsLogo" />
+    </mat-list>
+
+    <mat-list>
+      <mat-list-item>
+        <mat-icon>home</mat-icon>
+        <a [routerLink]="[{ outlets: { secondary: ['dashboard'] } }]">Home</a>
+      </mat-list-item>
+      <mat-list-item>
+        <mat-icon>dashboard</mat-icon>
+        <a [routerLink]="[{ outlets: { secondary: ['dashboard'] } }]"
+          >Dashboard</a
+        >
+      </mat-list-item>
+
+      <mat-list-item (click)="toggleMasterFileMenu()">
+        <mat-icon>folder</mat-icon> <a>Master File</a>
+        <mat-icon *ngIf="isMasterFileMenuOpen">expand_less</mat-icon>
+        <mat-icon *ngIf="!isMasterFileMenuOpen">expand_more</mat-icon>
+      </mat-list-item>
+
+      <div *ngIf="isMasterFileMenuOpen" class="ml-3 dropw">
+        <mat-list>
+          <mat-list-item>
+            <mat-icon>event</mat-icon
+            ><a
+              [routerLink]="[{ outlets: { secondary: ['Assets'] } }]"
+              matTooltip="Assets"
+              matTooltipPosition="above"
+              matTooltipShowDelay="500"
+              >Assets</a
+            >
+          </mat-list-item>
+          <mat-list-item>
+            <mat-icon>event</mat-icon
+            ><a
+              [routerLink]="[{ outlets: { secondary: ['admin-repo'] } }]"
+              matTooltip="Components Name"
+              matTooltipPosition="above"
+              matTooltipShowDelay="500"
+              >Components Name</a
+            >
+          </mat-list-item>
+          <mat-list-item>
+            <mat-icon>equalizer</mat-icon>
+            <a
+              [routerLink]="[{ outlets: { secondary: ['dashboard'] } }]"
+              matTooltip="Components Name"
+              matTooltipPosition="above"
+              matTooltipShowDelay="500"
+            >
+              Components Name
+            </a>
+          </mat-list-item>
+        </mat-list>
+      </div>
+
+      <mat-list-item>
+        <mat-icon>settings</mat-icon>
+        <a [routerLink]="[{ outlets: { secondary: ['admin-register'] } }]"
+          >User</a
+        >
+      </mat-list-item>
+    </mat-list>
+
+    <mat-list>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="menu-icon">
+          <mat-icon>logout</mat-icon>
+        </span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto"></ul>
+        <ul class="navbar-nav mr-right">
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              id="navbarDropdown"
+              role="button"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              <img
+                [src]="picture"
+                alt="Profile Picture"
+                style="width: 32px; height: 32px; border-radius: 50%"
+              />
+              {{ fullName }}
+              <!-- {{ email }} -->
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" (click)="logOut()">Logout</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </mat-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <router-outlet name="secondary"></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+<footer>
+  <p>
+    UP MINDANAO | Inventory Ticketing System 1.0.0 |
+    <a href="#">Changelog</a>
+  </p>
+</footer>
