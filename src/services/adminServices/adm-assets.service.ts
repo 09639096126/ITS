@@ -9,7 +9,7 @@ export class AdmAssetsService {
 
 
 
-  readonly APIUrl = 'http://localhost:5000/api';
+  readonly APIUrl = 'https://its-rho.vercel.app:5000/api';
 
 
   constructor(private http: HttpClient) {}
