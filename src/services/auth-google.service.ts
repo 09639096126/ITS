@@ -11,7 +11,7 @@ import { NgxSpinnerService } from 'ngx-spinner';
 })
 export class AuthGoogleService {
   public isLoading = false; // ✅ Show loading state
-  readonly APIUrl = 'http://localhost:5000/api/User/check-email';
+  readonly APIUrl = 'http://172.22.106.30:5000/api/User/check-email';
 
   constructor(
     private toastr: ToastrService,
@@ -54,7 +54,7 @@ export class AuthGoogleService {
   }
   getUserAssets(email: string): Observable<any[]> {
     return this.http.get<any[]>(
-      `http://localhost:5000/api/User/user-assets?email=${email}`
+      `http://172.22.106.30:5000/api/User/user-assets?email=${email}`
     );
   }
 
